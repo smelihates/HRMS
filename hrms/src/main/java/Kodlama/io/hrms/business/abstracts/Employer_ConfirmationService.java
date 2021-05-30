@@ -12,7 +12,7 @@ public interface Employer_ConfirmationService {
 	
 	DataResult<Employer_Confirmation> getById(int id);
 	
-	Result confirmate(int id, int staffId);
+	Result confirmateEmployer(int id, int staffId);
 	
 	DataResult<List<Employer_Confirmation>> findByConfirmatedFalse();
 }

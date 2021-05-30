@@ -18,5 +18,5 @@ public interface EmployeeService {
 	
 	DataResult<Employee>  getByEmail(String email);
 	
-	Result activateAccount(String email,String code);
+	Result activateAccountByEmail(String email,String code);
 }

@@ -9,22 +9,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import Kodlama.io.hrms.business.abstracts.EmployerService;
+import Kodlama.io.hrms.business.abstracts.Employer_ConfirmationService;
 import Kodlama.io.hrms.core.utilities.results.DataResult;
 import Kodlama.io.hrms.core.utilities.results.Result;
 import Kodlama.io.hrms.entities.concretes.Employer;
+import Kodlama.io.hrms.entities.concretes.Employer_Confirmation;
 
 @RestController
 @RequestMapping("/api/employers")
 public class EmployersController {
 	
 	private EmployerService employerService;
+	private Employer_ConfirmationService employer_ConfirmationService;
 
 	@Autowired
-	public EmployersController(EmployerService employerService) {
+	public EmployersController(EmployerService employerService,
+			Employer_ConfirmationService employer_ConfirmationService) {
 		super();
 		this.employerService = employerService;
+		this.employer_ConfirmationService = employer_ConfirmationService;
 	}
-	
+
 	@GetMapping("/getAll")
 	public DataResult<List<Employer>> getAll(){
 		return this.employerService.getAll();
@@ -65,5 +70,17 @@ public class EmployersController {
 
 		return this.employerService.register(employer, passwordAgain);
 	}
+	
+	@GetMapping("/findByConfirmatedFalse")
+	public DataResult<List<Employer_Confirmation>> findByConfirmatedFalse(){
+		return this.employer_ConfirmationService.findByConfirmatedFalse();
+	}
+	
+	@PostMapping("/confirmateEmployer")
+	public Result confirmateEmployer(int id, int staffId) {
+		return this.employer_ConfirmationService.confirmateEmployer(id, staffId);
+	}
+	
+	
 	
 }

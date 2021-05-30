@@ -154,16 +154,9 @@ public class EmployerManager implements EmployerService{
 		return new ErrorResult(result.getMessage());
 	}
 
-	@Override
-	public Result activateAccountByStaff(int id, int staffId) {
 
-		var result =this.employer_ConfirmationService.confirmate(id, staffId);
 
-		if(result.isSuccess()) {
-			return new SuccessResult(result.getMessage());
-		}
-		return new ErrorResult(result.getMessage());
-	}
+
 	
 
 	

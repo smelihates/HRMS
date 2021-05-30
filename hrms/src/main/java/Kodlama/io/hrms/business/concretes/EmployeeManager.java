@@ -119,7 +119,7 @@ public class EmployeeManager implements EmployeeService{
 	}
 
 	@Override
-	public Result activateAccount(String email,String code) {
+	public Result activateAccountByEmail(String email,String code) {
 		
 		var result=this.email_VerificationService.setValidate
 				(this.employeeDao.getByEmail(email).getId(), code);

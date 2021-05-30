@@ -49,7 +49,7 @@ public class Employer_ConfirmationManager implements Employer_ConfirmationServic
 	}
 
 	@Override
-	public Result confirmate(int id, int staffId) {
+	public Result confirmateEmployer(int id, int staffId) {
 		if(id>0 && staffId>0) {
 			Employer_Confirmation confirmation=new Employer_Confirmation();
 			confirmation=this.employer_ConfirmationDao.getById(id);

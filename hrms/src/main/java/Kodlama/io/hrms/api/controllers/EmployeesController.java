@@ -59,9 +59,9 @@ public class EmployeesController {
 		return this.employeeService.register(employee, passwordAgain);
 	}
 	
-	@PostMapping("/activateAccount")
+	@PostMapping("/activateAccountByEmail")
 	public Result activateAccount(@RequestParam String email,@RequestParam String code) { 
 		
-		return this.employeeService.activateAccount(email, code);
+		return this.employeeService.activateAccountByEmail(email, code);
 	}
 }

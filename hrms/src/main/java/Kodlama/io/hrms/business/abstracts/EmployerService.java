@@ -24,7 +24,7 @@ public interface EmployerService {
 	
 	Result activateAccountByEmail(String email,String code);
 
-	Result activateAccountByStaff(int id, int staffId);
+	
 	
 
 }

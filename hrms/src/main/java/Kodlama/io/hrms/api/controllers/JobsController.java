@@ -4,10 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import Kodlama.io.hrms.business.abstracts.JobService;
+import Kodlama.io.hrms.core.utilities.results.DataResult;
+import Kodlama.io.hrms.core.utilities.results.Result;
 import Kodlama.io.hrms.entities.concretes.Job;
 
 @RestController
@@ -23,8 +27,39 @@ public class JobsController {
 	}
 	
 	@GetMapping("/getall")
-	public List<Job> getAll(){
+	public DataResult<List<Job>> getAll() {
 		return this.jobService.getAll();
+	}
+	
+	@GetMapping("/getByJobId")
+	public DataResult<Job> getByJobId(int jobId) {
+		return this.jobService.getByJobId(jobId);
+	}
+	
+	@GetMapping("/getByTitle")
+	public DataResult<Job> getByTitle(String title) {
+		return this.jobService.getByTitle(title);
+	}
+	
+	@GetMapping("/getByUserId")
+	public DataResult<List<Job>> getByUserId(int userId) {
+		return this.jobService.getByUserId(userId);
+	}
+	
+	@GetMapping("/getByTitleContains")
+	public DataResult<List<Job>> getByTitleContains(String title) {
+		return this.jobService.getByTitleContains(title);
+	}
+	
+	@GetMapping("/getByTitleStartsWith")
+	public DataResult<List<Job>> getByTitleStartsWith(String title) {
+		return this.jobService.getByTitleStartsWith(title);
+	}
+	
+	@PostMapping("/add")
+	public Result add(@RequestBody Job job) {
+		System.out.println(job.getTitle());
+		return this.jobService.add( job);
 	}
 	
 }
