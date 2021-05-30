@@ -89,4 +89,17 @@ public class ValidationManager implements ValidationService{
 		
 		return new SuccessResult();
 	}
+
+	@Override
+	public Result validateEmailWebAddressDomain(String email, String webAddress) {
+		
+		webAddress=webAddress.split("www.")[1];
+		email=email.split("@")[1];
+		
+		if(webAddress.equals(email)) {
+			return new SuccessResult("Web Adresi ve Email domain'i aynı.");
+		}
+		
+		return new ErrorResult("Web adresi ve Email domain'i farklı!");
+	}
 }

@@ -49,7 +49,7 @@ public class UserManager implements UserService {
 	@Override
 	public Result isEmail(String email) {
 
-		System.out.println(this.userDao.findByEmail(email));
+		//System.out.println(this.userDao.findByEmail(email));
 		if (this.userDao.findByEmail(email)==null) {
 			return new SuccessResult();
 		}

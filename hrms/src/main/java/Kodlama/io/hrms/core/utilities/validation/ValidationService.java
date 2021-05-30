@@ -12,4 +12,6 @@ public interface ValidationService {
 	
 	Result validateBlankField(String value);
 	
+	Result validateEmailWebAddressDomain(String email, String webAddress);
+	
 }

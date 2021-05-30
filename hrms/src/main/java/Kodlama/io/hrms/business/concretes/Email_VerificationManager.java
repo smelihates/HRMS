@@ -50,7 +50,7 @@ public class Email_VerificationManager implements Email_VerificationService{
 			
 			Email_Verification verification2 = new Email_Verification(id,code,false);
 			
-			System.out.println(verification2);
+//			System.out.println(verification2);
 			this.email_VerificationDao.save(verification2);
 		
 			String toEmail=this.userDao.getById(id).getEmail();
@@ -84,15 +84,15 @@ public class Email_VerificationManager implements Email_VerificationService{
 	@Override
 	public Result setValidate(int id, String code) {
 		
-		System.out.println("id : " +id);
-		System.out.println("code : " +code);
+//		System.out.println("id : " +id);
+//		System.out.println("code : " +code);
 		if(code.isEmpty()) {
 			return new ErrorResult("Doğrulama kodu boş olamaz!");
 		}
 		
 		Email_Verification verification = new Email_Verification();
 		verification=this.email_VerificationDao.getById(id);
-		System.out.println(verification);
+		//System.out.println(verification);
 		
 		if(verification.getVerified()==true) {
 			return new ErrorResult("Daha önce doğrulama yapılmış!");

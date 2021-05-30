@@ -12,7 +12,7 @@ public class HashCodeGeneratorService {
 	                  + "0123456789"
 	                  + "abcdefghijklmnopqrstuvxyz"; 
 		
-	    System.out.println(metin);
+	    //System.out.println(metin);
 	    //  StringBuffer olutşurun 
 	    StringBuilder sb = new StringBuilder(n); 
 	 
@@ -27,7 +27,7 @@ public class HashCodeGeneratorService {
 	      sb.append(metin 
 	                    .charAt(index)); 
 	    } 
-	    System.out.println(sb.toString());
+	    //System.out.println(sb.toString());
 	    return sb.toString();
 	    
 	}
