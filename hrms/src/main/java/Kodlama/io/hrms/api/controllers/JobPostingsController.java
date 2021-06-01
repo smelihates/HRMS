@@ -65,6 +65,7 @@ public class JobPostingsController {
 	@PostMapping("/passive")
 	public Result passive(int id) {
 		return this.job_PostingService.passive(id);
+		
 	}
 	
 	@GetMapping("/getByActivePostings")
