@@ -29,5 +29,6 @@ public interface Job_PostingService {
 	
 	DataResult<List<JobPostingDto>> getByActivePostingsPublishDesc();
 	
+	DataResult<List<JobPostingDto>> getByActivePostingsWithCompany(String companyName);
 	
 }

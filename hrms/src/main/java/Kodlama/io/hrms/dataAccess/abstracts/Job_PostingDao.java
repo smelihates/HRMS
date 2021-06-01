@@ -39,4 +39,9 @@ public interface Job_PostingDao extends JpaRepository<Job_Posting, Integer>{
 			+ "From Job_Posting jp Inner Join jp.employer emp Inner Join jp.job j Order by jp.dateOfPublish desc ")
 	List<JobPostingDto> getByActivePostingsPublishDesc();
 	
+	@Query("Select new Kodlama.io.hrms.entities.dtos.JobPostingDto"
+			+ "(jp.id,emp.companyName,j.title,jp.openPosition,jp.dateOfPublish,jp.deadline)"
+			+ "From Job_Posting jp Inner Join jp.employer emp Inner Join jp.job j where emp.companyName=:companyName ")
+	List<JobPostingDto> getByActivePostingsWithCompany(String companyName);
+	
 }

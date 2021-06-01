@@ -117,5 +117,10 @@ public class Job_PostingManager implements Job_PostingService{
 		(this.job_PostingDao.getByActivePostingsPublishDesc(),"Aktif ilanlar Tarihe göre listelendi.");
 	}
 	
-	
+	@Override
+	public DataResult<List<JobPostingDto>> getByActivePostingsWithCompany(String companyName) {
+		
+		return new SuccessDataResult<List<JobPostingDto>>
+		(this.job_PostingDao.getByActivePostingsWithCompany(companyName),companyName + " şirketine ait Aktif ilanlar Tarihe göre listelendi.");
+	}
 }

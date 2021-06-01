@@ -76,4 +76,9 @@ public class JobPostingsController {
 	public DataResult<List<JobPostingDto>> getByActivePostingsPublishDesc() {
 		return this.job_PostingService.getByActivePostingsPublishDesc();
 	}
+	
+	@GetMapping("/getByActivePostingsWithCompany")
+	public DataResult<List<JobPostingDto>> getByActivePostingsWithCompany(String companyName) {
+		return this.job_PostingService.getByActivePostingsWithCompany(companyName);
+	}
 }
