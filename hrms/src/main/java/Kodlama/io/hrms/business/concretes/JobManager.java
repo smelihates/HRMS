@@ -70,10 +70,7 @@ public class JobManager implements JobService {
 
 	@Override
 	public Result add(Job job) {
-		
-		System.out.println(job);
-		
-		System.out.println(this.jobDao.getByTitle(job.getTitle()));
+
 
 		if(this.jobDao.getByTitle(job.getTitle())==null ) {
 			this.jobDao.save(job);

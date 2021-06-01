@@ -58,7 +58,7 @@ public class JobsController {
 	
 	@PostMapping("/add")
 	public Result add(@RequestBody Job job) {
-		System.out.println(job.getTitle());
+
 		return this.jobService.add( job);
 	}
 	

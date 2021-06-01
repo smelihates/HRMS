@@ -16,7 +16,7 @@ import Kodlama.io.hrms.core.utilities.results.SuccessResult;
 import Kodlama.io.hrms.core.utilities.validation.ValidationService;
 import Kodlama.io.hrms.dataAccess.abstracts.EmployerDao;
 import Kodlama.io.hrms.entities.concretes.Employer;
-import Kodlama.io.hrms.entities.concretes.Employer_Confirmation;
+
 
 @Service
 public class EmployerManager implements EmployerService{
