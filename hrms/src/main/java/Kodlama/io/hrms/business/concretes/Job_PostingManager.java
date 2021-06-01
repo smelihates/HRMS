@@ -3,6 +3,7 @@ package Kodlama.io.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import Kodlama.io.hrms.business.abstracts.Job_PostingService;
@@ -109,4 +110,12 @@ public class Job_PostingManager implements Job_PostingService{
 		(this.job_PostingDao.getByActivePostings(),"Aktif ilanlar listelendi.");
 	}
 
+	@Override
+	public DataResult<List<JobPostingDto>> getByActivePostingsPublishDesc() {
+		
+		return new SuccessDataResult<List<JobPostingDto>>
+		(this.job_PostingDao.getByActivePostingsPublishDesc(),"Aktif ilanlar Tarihe göre listelendi.");
+	}
+	
+	
 }

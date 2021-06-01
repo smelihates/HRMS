@@ -1,5 +1,8 @@
 package Kodlama.io.hrms.entities.dtos;
 
+import java.time.LocalDate;
+
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +15,6 @@ public class JobPostingDto {
 	private String companyName;
 	private String title;
 	private int openPosition;
-	private String dateOfPublish;
+	private LocalDate dateOfPublish;
 	private String deadline;
 }

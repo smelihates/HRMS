@@ -27,4 +27,7 @@ public interface Job_PostingService {
 	
 	DataResult<List<JobPostingDto>> getByActivePostings();
 	
+	DataResult<List<JobPostingDto>> getByActivePostingsPublishDesc();
+	
+	
 }
