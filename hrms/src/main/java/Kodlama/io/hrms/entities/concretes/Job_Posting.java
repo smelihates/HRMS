@@ -51,6 +51,9 @@ public class Job_Posting {
 	@Column(name="deadline")
 	private String deadline;
 	
+	@Column(name="date_of_publish")
+	private String dateOfPublish;
+	
 	@Column(name="open_position")
 	private int openPosition;
 	

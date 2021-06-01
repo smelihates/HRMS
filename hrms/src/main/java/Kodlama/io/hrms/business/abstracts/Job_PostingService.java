@@ -5,6 +5,7 @@ import java.util.List;
 import Kodlama.io.hrms.core.utilities.results.DataResult;
 import Kodlama.io.hrms.core.utilities.results.Result;
 import Kodlama.io.hrms.entities.concretes.Job_Posting;
+import Kodlama.io.hrms.entities.dtos.JobPostingDto;
 
 public interface Job_PostingService {
 
@@ -20,7 +21,10 @@ public interface Job_PostingService {
 	
 	DataResult<List<Job_Posting>> getByJobDetailContains(String details);
 	
-	DataResult<List<Job_Posting>> getByActiveJobPostings();
+	DataResult<List<Job_Posting>> getByActiveJobPostingsDetail();
 	
 	Result passive(int id);
+	
+	DataResult<List<JobPostingDto>> getByActivePostings();
+	
 }

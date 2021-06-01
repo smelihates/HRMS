@@ -13,6 +13,7 @@ import Kodlama.io.hrms.business.abstracts.Job_PostingService;
 import Kodlama.io.hrms.core.utilities.results.DataResult;
 import Kodlama.io.hrms.core.utilities.results.Result;
 import Kodlama.io.hrms.entities.concretes.Job_Posting;
+import Kodlama.io.hrms.entities.dtos.JobPostingDto;
 
 @RestController
 @RequestMapping("api/jobPostings")
@@ -51,9 +52,9 @@ public class JobPostingsController {
 		return this.job_PostingService.getByJobDetailContains(details);
 	}
 	
-	@GetMapping("/getByActiveJobPostings")
-	public DataResult<List<Job_Posting>> getByActiveJobPostings(boolean active) {
-		return this.job_PostingService.getByActiveJobPostings();
+	@GetMapping("/getByActiveJobPostingsDetail")
+	public DataResult<List<Job_Posting>> getByActiveJobPostingsDetail(boolean active) {
+		return this.job_PostingService.getByActiveJobPostingsDetail();
 	}
 	
 	@PostMapping("/add")
@@ -64,6 +65,11 @@ public class JobPostingsController {
 	@PostMapping("/passive")
 	public Result passive(int id) {
 		return this.job_PostingService.passive(id);
+	}
+	
+	@GetMapping("/getByActivePostings")
+	public DataResult<List<JobPostingDto>> getByActivePostings() {
+		return this.job_PostingService.getByActivePostings();
 	}
 	
 }

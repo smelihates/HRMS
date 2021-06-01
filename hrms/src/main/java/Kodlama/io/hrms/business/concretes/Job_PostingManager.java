@@ -14,6 +14,7 @@ import Kodlama.io.hrms.core.utilities.results.SuccessDataResult;
 import Kodlama.io.hrms.core.utilities.results.SuccessResult;
 import Kodlama.io.hrms.dataAccess.abstracts.Job_PostingDao;
 import Kodlama.io.hrms.entities.concretes.Job_Posting;
+import Kodlama.io.hrms.entities.dtos.JobPostingDto;
 
 @Service
 public class Job_PostingManager implements Job_PostingService{
@@ -80,7 +81,7 @@ public class Job_PostingManager implements Job_PostingService{
 	}
 
 	@Override
-	public DataResult<List<Job_Posting>> getByActiveJobPostings() {
+	public DataResult<List<Job_Posting>> getByActiveJobPostingsDetail() {
 
 		return new SuccessDataResult<List<Job_Posting>>
 		(this.job_PostingDao.getByActive(true),"İlanlar listelendi.");
@@ -99,6 +100,13 @@ public class Job_PostingManager implements Job_PostingService{
 		this.job_PostingDao.save(job_Posting);
 		
 		return new SuccessResult("İlan pasif yapıldı.");
+	}
+
+	@Override
+	public DataResult<List<JobPostingDto>> getByActivePostings() {
+		
+		return new SuccessDataResult<List<JobPostingDto>>
+		(this.job_PostingDao.getByActivePostings(),"Aktif ilanlar listelendi.");
 	}
 
 }
